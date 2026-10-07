@@ -1,0 +1,15 @@
+services:
+  emergencylink:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: 3000
+      JWT_SECRET: change-this-before-production
+      ADMIN_EMAIL: admin@example.com
+      ADMIN_PASSWORD: ChangeThisImmediately
+      CORS_ORIGIN: http://localhost:3000
+    volumes:
+      - emergencylink_data:/app/data
+volumes:
+  emergencylink_data:
